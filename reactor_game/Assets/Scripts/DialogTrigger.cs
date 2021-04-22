@@ -2,46 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogTrigger : MonoBehaviour
+public class DialogTrigger : MonoBehaviour, Interactable
 {
     public GameObject dialog;
-    public GameObject character;
-    PlayerController player;
-    //public bool enterInteract = false;
+    private PlayerController player;
 
     void Start()
     {
-        player = character.GetComponent<PlayerController>();
         dialog.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void enterInteract(PlayerController playerChar)
     {
-        if(player.checkInteractable())
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                enterInteract();
-                Debug.Log("worked");
-            }
-        }
-    }
-
-
-    public void enterInteract()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        player = playerChar;
         dialog.SetActive(true);
-        player.setInteract(true);
+        player.getMoveLock();
     }
 
     public void exitInteract()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         dialog.SetActive(false);
-        player.setInteract(false);
+        player.releaseMoveLock();
     }
 }
