@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour
     public float lookSens = 2.0f;
     public float lookLimit = 60.0f;
     public float interactDist = 10.0f;
-    public Camera playerCamera;
     public Canvas playerHUD;
+
+    public Camera playerCamera;
+    public Camera puzzleCam;
 
     private bool canMove = true;
     private CharacterController charControl;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         charControl = GetComponent<CharacterController>();
         this.releaseMoveLock();
+
+        toMainCam();
     }
 
     void Update()
@@ -88,5 +92,19 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void toMainCam()
+    {
+        playerCamera.enabled = true;
+        puzzleCam.enabled = false;
+        playerHUD.enabled = true;
+    }
+
+    public void toPuzzleCam()
+    {
+        playerCamera.enabled = false;
+        puzzleCam.enabled = true;
+        playerHUD.enabled = false;
     }
 }
