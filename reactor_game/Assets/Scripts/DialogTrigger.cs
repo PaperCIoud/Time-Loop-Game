@@ -6,6 +6,7 @@ public class DialogTrigger : MonoBehaviour, Interactable
 {
     public GameObject dialog;
     private PlayerController player;
+    public string type;
 
     void Start()
     {
@@ -17,11 +18,22 @@ public class DialogTrigger : MonoBehaviour, Interactable
         player = playerChar;
         dialog.SetActive(true);
         player.getMoveLock();
+        if (type == "dotPuzzle")
+        {
+            player.toPuzzleCam();
+        }
+
     }
 
     public void exitInteract()
     {
         dialog.SetActive(false);
         player.releaseMoveLock();
+        if (type == "dotPuzzle")
+        {
+            player.toMainCam();
+        }
     }
+
+    
 }
