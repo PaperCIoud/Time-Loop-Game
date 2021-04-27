@@ -53,20 +53,20 @@ public class PlayerController : MonoBehaviour
         // Debug.DrawLine(ray.origin, ray.origin + interactDist * ray.direction, Color.red);
 
         CrosshairController crosshair = playerHUD.GetComponent<CrosshairController>();
+        crosshair.setNotHighlighted();
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, interactDist))
         {
-            crosshair.setHighlighted();
             GameObject targetObj = hit.collider.gameObject;
-            if (targetObj.tag == "Interactable" && canMove && Input.GetKey(KeyCode.E))
+            if (targetObj.tag == "Interactable" && canMove)
             {
-                Interactable interactScript = targetObj.GetComponent<Interactable>();
-                interactScript.enterInteract(this);
+                crosshair.setHighlighted();
+                if (Input.GetKey(KeyCode.E))
+                {
+                    Interactable interactScript = targetObj.GetComponent<Interactable>();
+                    interactScript.enterInteract(this);
+                }
             }
-        }
-        else
-        {
-            crosshair.setNotHighlighted();
         }
     }
 
