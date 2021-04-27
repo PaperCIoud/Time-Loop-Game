@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             crosshair.setHighlighted();
             GameObject targetObj = hit.collider.gameObject;
-            if (targetObj.tag == "Interactable" && Input.GetKey(KeyCode.E))
+            if (targetObj.tag == "Interactable" && canMove && Input.GetKey(KeyCode.E))
             {
                 Interactable interactScript = targetObj.GetComponent<Interactable>();
                 interactScript.enterInteract(this);
@@ -68,6 +68,11 @@ public class PlayerController : MonoBehaviour
         {
             crosshair.setNotHighlighted();
         }
+    }
+
+    public Ray getViewRay()
+    {
+        return new Ray(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward));
     }
 
     //Change whether the player is interacting with an object
