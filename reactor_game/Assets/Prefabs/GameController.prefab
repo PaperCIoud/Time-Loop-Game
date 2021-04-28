@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd314c4af8b9e7e4b81dbdd73c598ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeMeltdown: 30
+  timeBeforeMeltdown: 180
   gameStartDialog: {fileID: 3238495233281293666}
   gameRestartDialog: {fileID: 3238495234319707739}
   restartCounterPrefab: {fileID: 2457258013842413742, guid: 1065d7a486286e74ab21ead42885721d, type: 3}
