@@ -47,4 +47,9 @@ public class WireCuttingGame : MonoBehaviour
 
 
     }
+
+    public bool isSolved()
+    {
+        return (state == State.Success);
+    }
 }

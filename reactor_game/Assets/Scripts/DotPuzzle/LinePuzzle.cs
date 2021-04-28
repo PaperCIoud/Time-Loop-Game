@@ -9,10 +9,11 @@ public class LinePuzzle : MonoBehaviour
 
     private List<string> answer = new List<string> { "0-1", "1-2", "2-3" };
     private List<string> userAnswer = new List<string> { };
+    private bool completed = false;
 
     public GameObject successScreen;
     public GameObject failScreen;
-    public bool completed = false;
+    
 
 
     void Start()
@@ -59,6 +60,11 @@ public class LinePuzzle : MonoBehaviour
     public void addline(int id1, int id2)
     {
         userAnswer.Add(Mathf.Min(id1, id2) + "-" + Mathf.Max(id1, id2));
+    }
+
+    public bool isSolved()
+    {
+        return completed;
     }
 
 
