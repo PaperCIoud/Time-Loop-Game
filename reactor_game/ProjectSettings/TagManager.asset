@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Lines
+  - RestartCounter
   layers:
   - Default
   - TransparentFX
