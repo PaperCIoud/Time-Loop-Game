@@ -5,9 +5,17 @@ using UnityEngine;
 public class LeverPuzzle : MonoBehaviour
 {
     public string solution;
+    public GameObject gameController;
+
+    public bool dotPuzzleSolved = false;
 
     public bool checkSolution()
     {
+        if (!dotPuzzleSolved)
+        {
+            return false;
+        }
+
         string currentState = "";
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -28,5 +36,10 @@ public class LeverPuzzle : MonoBehaviour
         }
         
         return currentState == solution;
+    }
+
+    public void triggerMeltdown()
+    {
+        gameController.GetComponent<GameController>().meltdown();
     }
 }

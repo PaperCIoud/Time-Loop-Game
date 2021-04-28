@@ -4,29 +4,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
 
-public class DotPuzzle : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
+public class Dot : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler, IEndDragHandler, IDropHandler
 {
     private LineRenderer lr;
-    private Vector3 mouse;
-    private Vector3 selfPos;
+    public Vector3 mouse;
+    public Vector3 selfPos;
     private CanvasGroup canGroup;
 
-    private static int num = 1;
-    private static List<string> answer = new List<string> { "0-1", "1-2", "2-3" };
-    private static List<string> userAnswer = new List<string> { };
 
-    public GameObject successScreen;
-    public GameObject failScreen;
-    public GameObject game;
-
-    public float id;
+    public LinePuzzle game;
+    public int id;
     public bool successDrop = false;
     public Material mat;
 
     void Start()
     {
-        successScreen.SetActive(false);
-        failScreen.SetActive(false);
         selfPos = GetComponent<Transform>().position;
         canGroup = GetComponent<CanvasGroup>();
     }
@@ -69,7 +61,6 @@ public class DotPuzzle : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         else
         {
             lr = null;
-            num++;
         }
         //resets for next line
         successDrop = false;
@@ -85,21 +76,21 @@ public class DotPuzzle : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("Drop");
-        DotPuzzle startPoint = eventData.pointerDrag.GetComponent<DotPuzzle>();
+        Dot startPoint = eventData.pointerDrag.GetComponent<Dot>();
         LineRenderer curLine = startPoint.lr;
 
         //snaps endpoint of line to end dot 
         curLine.SetPosition(1, selfPos);
         startPoint.successDrop = true;
+        game.addline(id, startPoint.id);
 
-        userAnswer.Add(Mathf.Min(id, startPoint.id) + "-" + Mathf.Max(id, startPoint.id));
 
 
     }
 
     public void createLine()
     {
-        lr = new GameObject("Line" + num).AddComponent<LineRenderer>();
+        lr = new GameObject("Line").AddComponent<LineRenderer>();
         lr.tag = "Lines";
         lr.positionCount = 2;
         lr.material = mat;
@@ -107,42 +98,5 @@ public class DotPuzzle : MonoBehaviour, IPointerDownHandler, IDragHandler, IBegi
         lr.endWidth = 0.015f;
     }
 
-    public static void resetPuzzle()
-    {
-        num = 1;
-        GameObject[] lines = GameObject.FindGameObjectsWithTag("Lines");
-        foreach (GameObject line in lines)
-        {
-            GameObject.Destroy(line);
-        }
-        userAnswer = new List<string> { };
-    }
-
-    public static bool checkAnswer()
-    {
-        userAnswer.Sort();
-        answer.Sort();
-        Debug.Log(Enumerable.SequenceEqual(answer, userAnswer));
-        bool correct = Enumerable.SequenceEqual(answer, userAnswer);
-        resetPuzzle();
-        return correct; 
-    }
-
-    public void done()
-    {
-        game.SetActive(false);
-        if(checkAnswer())
-        {
-            successScreen.SetActive(true);
-        }
-        else
-        {
-            failScreen.SetActive(true);
-        }
-    }
-
-
-
-
-
+    
 }

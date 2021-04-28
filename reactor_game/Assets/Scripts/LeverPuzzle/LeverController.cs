@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LeverController : MonoBehaviour, Interactable
 {
-    public float animationDur = 2;
+    public float animationDur = 1;
     public float rotationMag = 45;
 
     private PlayerController player;
