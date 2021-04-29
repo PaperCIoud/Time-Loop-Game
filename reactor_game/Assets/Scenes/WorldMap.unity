@@ -6804,6 +6804,10 @@ PrefabInstance:
         the reactor, turn off all the cooling systems and then wait.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1200354792077155550, guid: 6872dd5d6d89b0f439a796739f7e58c2, type: 3}
+      propertyPath: answers.Array.data[0]
+      value: scout26kevinTheDog
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200354792077155550, guid: 6872dd5d6d89b0f439a796739f7e58c2, type: 3}
       propertyPath: dialogs.Array.data[3]
       value: 
       objectReference: {fileID: 1494979774}

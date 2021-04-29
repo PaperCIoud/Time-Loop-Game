@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public float walkSpeed = 7.5f;
-    public float lookSens = 2.0f;
-    public float lookLimit = 60.0f;
+    public float lookSens = 1.0f;
+    public float lookLimit = 80.0f;
     public float interactDist = 10.0f;
     public Canvas playerHUD;
 
@@ -47,6 +47,16 @@ public class PlayerController : MonoBehaviour
 
         //Interaction ray cast
         this.checkInteraction();
+
+        //Adjust look sensitivity
+        if (Input.GetKey(KeyCode.Period))
+        {
+            lookSens *= 1.02f;
+        }
+        if (Input.GetKey(KeyCode.Comma))
+        {
+            lookSens *= 0.98f;
+        }
         
     }
 
