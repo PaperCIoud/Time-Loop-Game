@@ -553,6 +553,12 @@ PrefabInstance:
       value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3238495234152285620, guid: b21bf1db79ddb1141893e91cee1a65f1, type: 3}
+      propertyPath: m_text
+      value: Why is the emergency reactor meltdown alarm going off!?!? If boss finds
+        out I was asleep on the job, I'll get fired for sure. I need to do something
+        about this alarm or I'm done for!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238495234152285620, guid: b21bf1db79ddb1141893e91cee1a65f1, type: 3}
       propertyPath: m_margin.z
       value: -550.4756
       objectReference: {fileID: 0}
