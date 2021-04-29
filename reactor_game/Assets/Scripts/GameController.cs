@@ -101,13 +101,13 @@ public class GameController : MonoBehaviour
         Light blinkingLight = timeIndicatorLight.GetComponent<Light>();
         while(timeBeforeMeltdown > 0.5)
         {
-            if (Mathf.Sin(4*Mathf.PI*(180-timeBeforeMeltdown)/timeBeforeMeltdown) > 0.7)
+            if (Mathf.Sin(4*Mathf.PI*(180-timeBeforeMeltdown)/(timeBeforeMeltdown+0.5f)) > 0.7)
             {
-                blinkingLight.color = Color.red;
+                blinkingLight.enabled = true;
             }
             else
             {
-                blinkingLight.color = Color.white;
+                blinkingLight.enabled = false;
             }
             yield return null;
         }
