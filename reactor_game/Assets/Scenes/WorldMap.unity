@@ -553,6 +553,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 239487356}
     - target: {fileID: 3238495234590375793, guid: b21bf1db79ddb1141893e91cee1a65f1, type: 3}
+      propertyPath: timeBeforeMeltdown
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238495234590375793, guid: b21bf1db79ddb1141893e91cee1a65f1, type: 3}
       propertyPath: timeIndicatorLight
       value: 
       objectReference: {fileID: 867214947}
@@ -5297,6 +5301,10 @@ PrefabInstance:
     - target: {fileID: 3223042630420562324, guid: 2f2c0b01c5c5e8f43a3f042aca3d34e5, type: 3}
       propertyPath: m_Name
       value: WirePuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223042630873758411, guid: 2f2c0b01c5c5e8f43a3f042aca3d34e5, type: 3}
+      propertyPath: m_text
+      value: The LCD lights up and says "The lever encoding is 10110".
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f2c0b01c5c5e8f43a3f042aca3d34e5, type: 3}
