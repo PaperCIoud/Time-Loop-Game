@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             if (targetObj.tag == "Interactable" && canMove)
             {
                 crosshair.setHighlighted();
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Mouse0))
                 {
                     Interactable interactScript = targetObj.GetComponent<Interactable>();
                     interactScript.enterInteract(this);
