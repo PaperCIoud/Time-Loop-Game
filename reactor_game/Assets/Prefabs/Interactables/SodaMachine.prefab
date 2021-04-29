@@ -38,6 +38,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 923317347}
+    - target: {fileID: 4539920478155342687, guid: b0569cc0be8ee524080d477e1bfb1c58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4539920478988983329, guid: b0569cc0be8ee524080d477e1bfb1c58, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -126,6 +130,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SodaMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 4539920478988983342, guid: b0569cc0be8ee524080d477e1bfb1c58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539920479702874224, guid: b0569cc0be8ee524080d477e1bfb1c58, type: 3}
+      propertyPath: m_text
+      value: I got a grape soda.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0569cc0be8ee524080d477e1bfb1c58, type: 3}
 --- !u!1 &3828294495977512520 stripped
@@ -154,31 +166,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5
+      value: 2.4999998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.102
+      value: 13.013724
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.01
+      value: 0.32776964
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.902
+      value: 19.832771
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -190,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 505a0af428318114caebc6ab67cfe55b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
