@@ -9,7 +9,7 @@ public class WireCuttingGame : MonoBehaviour
     public Wire[] wires;
 
 
-    private string[] order = new string[] { "red", "yellow", "blue", "black", "white" };
+    private string[] order = new string[] { "black", "red", "blue", "white", "yellow" };
     private int numCut = 0;
     private enum State { Valid, Failed, Success };
     private State state;
