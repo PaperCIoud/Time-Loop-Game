@@ -177,12 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'gma -> main
-
-    eps -> gate
-
-
-'
+  m_text: "   C -> 1\n   E -> 4\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8d72b8690c049443af2a8e59dd7913e, type: 2}
   m_sharedMaterial: {fileID: 3698370347806518659, guid: e8d72b8690c049443af2a8e59dd7913e, type: 2}
