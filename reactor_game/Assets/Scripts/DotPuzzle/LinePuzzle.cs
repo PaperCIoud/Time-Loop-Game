@@ -13,11 +13,13 @@ public class LinePuzzle : MonoBehaviour
 
     public GameObject successScreen;
     public GameObject failScreen;
+    public GameObject instruction;
     
 
 
     void Start()
     {
+        instruction.SetActive(true);
         successScreen.SetActive(false);
         failScreen.SetActive(false);
     }
@@ -49,10 +51,12 @@ public class LinePuzzle : MonoBehaviour
         gameObject.SetActive(false);
         if (checkAnswer())
         {
+            instruction.SetActive(false);
             successScreen.SetActive(true);
         }
         else
         {
+            instruction.SetActive(false);
             failScreen.SetActive(true);
         }
     }

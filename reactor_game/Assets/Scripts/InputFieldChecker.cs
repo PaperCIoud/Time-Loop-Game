@@ -69,4 +69,6 @@ public class InputFieldChecker : MonoBehaviour
             input.text = "";
         }
     }
+
+
 }

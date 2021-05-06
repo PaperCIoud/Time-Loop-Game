@@ -6,6 +6,7 @@ public class WireCuttingGame : MonoBehaviour
 {
     public GameObject successDialog;
     public GameObject failDialog;
+    //public GameObject instructions;
     public Wire[] wires;
 
 
