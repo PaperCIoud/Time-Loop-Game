@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &220024266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220024267}
+  - component: {fileID: 220024269}
+  - component: {fileID: 220024268}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &220024267
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220024266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4562553075494037435}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -34.059, y: 23.719}
+  m_SizeDelta: {x: 168.1172, y: 147.4387}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &220024269
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220024266}
+  m_CullTransparentMesh: 1
+--- !u!114 &220024268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220024266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b9d622de1c3feaa42a65c35f0c288197, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!65 &1663380833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105,10 +180,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1666962087258283896}
     m_Modifications:
+    - target: {fileID: 1073264863759580217, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_Name
+      value: lisaAccount
+      objectReference: {fileID: 0}
     - target: {fileID: 9082295407162985517, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1663380834}
+    - target: {fileID: 9082295407439062140, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9082295407527983776, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
       propertyPath: m_Name
       value: LoginScreen
@@ -197,10 +280,118 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9082295407527983789, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1101
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186531, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_text
+      value: "Hi Lisa!\r\nAs a supervisor, you have access to the instructions for
+        operating the reactor, unlike those pesky administrators who don\u2019t understand
+        how little authority they have.\r\n\n\n\n\n\nReactor Cooldown:\r\nIn order
+        to cooldown the reactor, you must enter this pattern into the control room\u2019s
+        computer before positioning the levers on the reactor.\r\nReactor Meltdown:\r\nIn
+        order to meltdown the reactor, turn off all the cooling systems and then
+        wait.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186531, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186531, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_margin.x
+      value: -367.62073
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186531, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_margin.z
+      value: -137.64357
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186531, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186541, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 139
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407911186541, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000011444
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407986033734, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: answers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407986033734, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: dialogs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407986033734, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: answers.Array.data[0]
+      value: scout26kevinTheDog
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295407986033734, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: dialogs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6937601069322413217}
+    - target: {fileID: 9082295407986033735, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408807379011, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_Name
+      value: scoutAccount
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408807379011, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408816394716, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408956653443, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408966505893, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_text
+      value: Incorrect username and password!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408966505893, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_margin.z
+      value: -169.92389
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408966505895, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408966505895, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -63
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295408966505914, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082295409270030102, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
 --- !u!1 &1200354792690737720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9082295407527983776, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+  m_PrefabInstance: {fileID: 7972022111341975704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6937601069322413217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1073264863759580217, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
+  m_PrefabInstance: {fileID: 7972022111341975704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4562553075494037435 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5905131732669644579, guid: 1afd70d073f49724494ab846573c1cd1, type: 3}
   m_PrefabInstance: {fileID: 7972022111341975704}
   m_PrefabAsset: {fileID: 0}
