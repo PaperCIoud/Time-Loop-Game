@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
         {
             playerCont.getMoveLock();
         }
-        if (Input.GetKey(KeyCode.Escape) && playerCont.canMove)
+        if (Input.GetKey(KeyCode.P) && playerCont.canMove)
         {
             pause();
         }
