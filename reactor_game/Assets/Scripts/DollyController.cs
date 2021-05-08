@@ -7,6 +7,7 @@ public class DollyController : MonoBehaviour
     public GameObject[] path;
     public int pathTarget = 0;
     public GameObject gameCont;
+    public float segmentDuration = 0.7f;
 
     public void Start()
     {
@@ -28,11 +29,11 @@ public class DollyController : MonoBehaviour
         Vector3 target = new Vector3(path[pathTarget].transform.position.x, path[pathTarget].transform.position.y + 0.5f, path[pathTarget].transform.position.z);
         Quaternion targetRot = path[pathTarget].transform.localRotation * Quaternion.Euler(0, 180, 0);
         float elapsedTime = 0;
-        float speed = 20f / 0.5f;
+        float speed = 20f / segmentDuration;
 
-        while (elapsedTime < 0.5f)
+        while (elapsedTime < segmentDuration)
         {
-            transform.position = Vector3.Lerp(start, target, (elapsedTime / 0.5f));
+            transform.position = Vector3.Lerp(start, target, (elapsedTime / segmentDuration));
             elapsedTime += Time.deltaTime;
             transform.localRotation = Quaternion.RotateTowards(transform.localRotation, targetRot, speed * Time.deltaTime);
             yield return null;

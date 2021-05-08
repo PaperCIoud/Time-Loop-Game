@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WorldMap.unity
     guid: 8a57d8dbf3a075f44b389968359f055e
+  - enabled: 1
+    path: Assets/Scenes/BootlegWinScreen.unity
+    guid: 046533d525f9a3a498b27938a356fe06
   m_configObjects: {}

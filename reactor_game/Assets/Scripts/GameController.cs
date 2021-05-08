@@ -166,7 +166,7 @@ public class GameController : MonoBehaviour
         Light blinkingLight = timeIndicatorLight.GetComponent<Light>();
         while(timeBeforeMeltdown > 0.5)
         {
-            if (Mathf.Sin(4*Mathf.PI*(180-timeBeforeMeltdown)/(timeBeforeMeltdown+0.5f)) > 0.7)
+            if (Mathf.Sin(8*Mathf.PI*(180-timeBeforeMeltdown)/(timeBeforeMeltdown+10f)) > 0.7)
             {
                 blinkingLight.color = Color.red;
             }
@@ -217,5 +217,10 @@ public class GameController : MonoBehaviour
             yield return null;
         }
         playerCont.timeTravel();
+    }
+
+    public void win()
+    {
+        SceneManager.LoadScene("BootlegWinScreen");
     }
 }
