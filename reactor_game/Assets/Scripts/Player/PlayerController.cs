@@ -9,14 +9,17 @@ public class PlayerController : MonoBehaviour
 
     public float walkSpeed = 7.5f;
     public float lookSens = 1.0f;
-    public float lookLimit = 80.0f;
+    public float lookLimit = 90.0f;
     public float interactDist = 10.0f;
     public Canvas playerHUD;
+    public GameObject TimeTravelTube;
+    public GameObject TimeTravelCam;
+    public GameObject reactor;
 
     public Camera playerCamera;
     public Camera puzzleCam;
 
-    private bool canMove = true;
+    public bool canMove = true;
     private CharacterController charControl;
     private Vector3 moveDir = Vector3.zero;
     private float Xrot = 0;
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         charControl = GetComponent<CharacterController>();
         this.releaseMoveLock();
-
+        TimeTravelTube.SetActive(false);
         toMainCam();
     }
 
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour
         float Yspeed = canMove ? walkSpeed * Input.GetAxis("Horizontal"): 0;
         moveDir = transform.TransformDirection(Vector3.forward) * Xspeed + transform.TransformDirection(Vector3.right) * Yspeed;
         charControl.Move(moveDir * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, 1, transform.position.z);
 
         // Rotation
         if (canMove) {
@@ -116,5 +120,28 @@ public class PlayerController : MonoBehaviour
         playerCamera.enabled = false;
         puzzleCam.enabled = true;
         playerHUD.enabled = false;
+    }
+
+    public void updateSens(float sens)
+    {
+        lookSens = sens;
+    }
+
+    public void updateVol(float vol)
+    {
+        AudioListener.volume = vol;
+    }
+
+    public void timeTravel()
+    {
+        playerCamera.enabled = false;
+        playerHUD.enabled = false;
+
+        TimeTravelTube.SetActive(true);
+        //TimeTravelTube.transform.position = playerCamera.transform.position;
+        //TimeTravelTube.transform.localRotation = playerCamera.transform.rotation * Quaternion.Euler(0, 180, 0);
+        
+        DollyController animCam = TimeTravelCam.GetComponent<DollyController>();
+        animCam.animate();
     }
 }

@@ -28,6 +28,10 @@ public class DialogTrigger : MonoBehaviour, Interactable
     public void exitInteract()
     {
         dialog.SetActive(false);
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        }
         player.releaseMoveLock();
         if (type == "dotPuzzle")
         {

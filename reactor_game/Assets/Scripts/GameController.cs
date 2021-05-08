@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -8,12 +9,18 @@ public class GameController : MonoBehaviour
     public float timeBeforeMeltdown = 180;
     public GameObject gameStartDialog;
     public GameObject gameRestartDialog;
+    public GameObject gamePauseDialog;
     public GameObject restartCounterPrefab;
     public GameObject player;
+    public Image fadeMask;
+    public GameObject reactor;
 
     public GameObject wireCuttingPuzzle;
     public GameObject dotPuzzle;
     public GameObject leverPuzzle;
+
+    public Slider volSlider;
+    public Slider SensSlider;
 
     public GameObject wireCuttingRewardDoor;
     public GameObject timeIndicatorLight;
@@ -27,6 +34,7 @@ public class GameController : MonoBehaviour
     private LeverPuzzle leverPuzzleCont;
 
     private DoorController doorCont;
+    private bool paused = false;
 
 
     private bool completedStartDialog = false;
@@ -39,7 +47,14 @@ public class GameController : MonoBehaviour
             restartCounterObject = Instantiate(restartCounterPrefab);
         }
         restartCounter = restartCounterObject.GetComponent<RestartCounter>();
+
         playerCont = player.GetComponent<PlayerController>();
+
+        playerCont.updateVol(restartCounter.getVolumeSetting());
+        playerCont.updateSens(restartCounter.getSensitivitySetting());
+        volSlider.value = restartCounter.getVolumeSetting();
+        SensSlider.value = restartCounter.getSensitivitySetting();
+
         playerCont.getMoveLock();
 
         dotPuzzleCont = dotPuzzle.GetComponent<LinePuzzle>();
@@ -58,6 +73,8 @@ public class GameController : MonoBehaviour
             gameStartDialog.SetActive(true);
             gameRestartDialog.SetActive(false);
         }
+        gamePauseDialog.SetActive(false);
+
         StartCoroutine(runCountdown());
         StartCoroutine(blinkLight());
         StartCoroutine(dotPuzzleListener());
@@ -78,19 +95,67 @@ public class GameController : MonoBehaviour
         {
             playerCont.getMoveLock();
         }
+        if (Input.GetKey(KeyCode.Escape) && playerCont.canMove)
+        {
+            pause();
+        }
     }
 
     public void meltdown()
     {
         restartCounter.increment();
+
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Interactable"))
+        {
+            Interactable script = obj.GetComponent<Interactable>();
+            if (script != null)
+            {
+                script.exitInteract();
+            }
+        }
+
+        explode();
+    }
+
+    public void resetScene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void pause()
+    {
+        paused = true;
+        playerCont.getMoveLock();
+        gamePauseDialog.SetActive(true);
+    }
+
+    public void unpause()
+    {
+        paused = false;
+        playerCont.releaseMoveLock();
+        gamePauseDialog.SetActive(false);
+    }
+
+    public void setSensSetting(System.Single sens)
+    {
+        restartCounter.setSensitivitySetting(sens);
+        playerCont.updateSens(sens);
+    }
+
+    public void setVolSetting(System.Single vol)
+    {
+        restartCounter.setVolumeSetting(vol);
+        playerCont.updateVol(vol);
     }
 
     IEnumerator runCountdown()
     {
         while(timeBeforeMeltdown > 0)
         {
-            timeBeforeMeltdown -= Time.deltaTime;
+            if (!paused)
+            {
+                timeBeforeMeltdown -= Time.deltaTime;
+            }
             yield return null;
         }
         meltdown();
@@ -103,11 +168,11 @@ public class GameController : MonoBehaviour
         {
             if (Mathf.Sin(4*Mathf.PI*(180-timeBeforeMeltdown)/(timeBeforeMeltdown+0.5f)) > 0.7)
             {
-                blinkingLight.enabled = true;
+                blinkingLight.color = Color.red;
             }
             else
             {
-                blinkingLight.enabled = false;
+                blinkingLight.color = Color.yellow;
             }
             yield return null;
         }
@@ -129,5 +194,28 @@ public class GameController : MonoBehaviour
             yield return null;
         }
         doorCont.open();
+    }
+
+    public void explode()
+    {
+        AudioSource reactorSource = reactor.GetComponent<AudioSource>();
+        reactorSource.Play();
+        AudioSource music = player.GetComponent<AudioSource>();
+        music.volume = 0.05f;
+        StartCoroutine(waitToTimeTravel());
+    }
+
+    public IEnumerator waitToTimeTravel()
+    {
+        float elapsed = 0;
+        while (elapsed < 2f)
+        {
+            float fadeMaskAlpha = Mathf.Lerp(0, 1, elapsed/2f);
+            fadeMask.color = new Color(1, 1, 1, fadeMaskAlpha);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        playerCont.timeTravel();
     }
 }

@@ -43,6 +43,10 @@ public class PowerButton : MonoBehaviour, Interactable
         winningDialog.SetActive(false);
         losingDialog.SetActive(false);
         breakingDialog.SetActive(false);
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        }
         player.releaseMoveLock();
     }
 }

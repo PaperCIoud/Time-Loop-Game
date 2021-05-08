@@ -21,6 +21,10 @@ public class LeverController : MonoBehaviour, Interactable
 
     public void exitInteract()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        }
         player.releaseMoveLock();
     }
 
