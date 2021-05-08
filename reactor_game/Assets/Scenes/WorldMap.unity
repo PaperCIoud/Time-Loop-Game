@@ -21404,7 +21404,7 @@ GameObject:
   - component: {fileID: 1371079832}
   - component: {fileID: 1371079834}
   - component: {fileID: 1371079833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FadeMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33460,6 +33460,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 310716068}
     m_Modifications:
+    - target: {fileID: 4511488009618445093, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876033797374286537, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173976675461453933, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: reactor
+      value: 
+      objectReference: {fileID: 340170751}
     - target: {fileID: 5173976675461453933, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
       propertyPath: puzzleCam
       value: 
@@ -33472,6 +33484,10 @@ PrefabInstance:
       propertyPath: TimeTravelTube
       value: 
       objectReference: {fileID: 1365211699}
+    - target: {fileID: 5173976675461453933, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: rayMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5376392669290458363, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
       propertyPath: Loop
       value: 1
@@ -33481,6 +33497,22 @@ PrefabInstance:
       value: FirstPersonPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 5376392669290458364, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376392669290458364, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6119676805550352786, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114155169151309971, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486416844205575949, guid: c81e4601e208d7141868f3ab3e324a46, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}

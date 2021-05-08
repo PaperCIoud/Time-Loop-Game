@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public GameObject TimeTravelCam;
     public GameObject reactor;
 
+    public LayerMask rayMask;
+
     public Camera playerCamera;
     public Camera puzzleCam;
 
@@ -73,9 +75,10 @@ public class PlayerController : MonoBehaviour
         CrosshairController crosshair = playerHUD.GetComponent<CrosshairController>();
         crosshair.setNotHighlighted();
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, interactDist))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, interactDist, ~(1 << LayerMask.NameToLayer("Player"))))
         {
             GameObject targetObj = hit.collider.gameObject;
+            Debug.Log(targetObj.name);
             if (targetObj.tag == "Interactable" && canMove)
             {
                 crosshair.setHighlighted();
