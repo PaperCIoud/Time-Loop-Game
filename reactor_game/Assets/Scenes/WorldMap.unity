@@ -26754,6 +26754,10 @@ PrefabInstance:
       propertyPath: m_text
       value: The LCD lights up and says "The lever encoding is 10110".
       objectReference: {fileID: 0}
+    - target: {fileID: 7388015680761301043, guid: 2f2c0b01c5c5e8f43a3f042aca3d34e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f2c0b01c5c5e8f43a3f042aca3d34e5, type: 3}
 --- !u!1001 &1713324336
