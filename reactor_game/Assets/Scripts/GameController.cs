@@ -113,7 +113,8 @@ public class GameController : MonoBehaviour
                 script.exitInteract();
             }
         }
-
+        playerCont.canMove = false;
+        paused = true;
         explode();
     }
 
@@ -166,7 +167,7 @@ public class GameController : MonoBehaviour
         Light blinkingLight = timeIndicatorLight.GetComponent<Light>();
         while(timeBeforeMeltdown > 0.5)
         {
-            if (Mathf.Sin(8*Mathf.PI*(180-timeBeforeMeltdown)/(timeBeforeMeltdown+10f)) > 0.7)
+            if (Mathf.Sin(8*Mathf.PI*(180-timeBeforeMeltdown)/(timeBeforeMeltdown+20f)) > 0.7)
             {
                 blinkingLight.color = Color.red;
             }

@@ -31,7 +31,7 @@ public class WirePuzzle : MonoBehaviour
         // Return 2 if correct
         if (broken)
         {
-            return 0;
+            return 1;
         }
         int correct = 2;
         for (int i = 0; i < transform.childCount; i++)

@@ -14,7 +14,7 @@ public class LeverController : MonoBehaviour, Interactable
     {
         triggered = !triggered;
         player = playerChar;
-        player.getMoveLock();
+        player.canMove = false;
         float zRot = triggered ? -rotationMag : rotationMag;
         StartCoroutine(rotationAnimation(zRot));
     }
@@ -25,7 +25,7 @@ public class LeverController : MonoBehaviour, Interactable
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }
-        player.releaseMoveLock();
+        player.canMove = true;
     }
 
     IEnumerator rotationAnimation(float zRot)
