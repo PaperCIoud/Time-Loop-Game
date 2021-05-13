@@ -6855,7 +6855,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "This game was created by: Francisco Zepeda, Alex Smith, Hao Ni, Zack Gromko,
-    and Margaret Wang.\n\nThank you to the artists who made our game possible...\nAsdonuts
+    and Ret Wang.\n\nThank you to the artists who made our game possible...\nAsdonuts
     Font: GFRCreative, BGM: Zander Noriega, 3D Letters: viteker85q,\nExplosion Sound
     Effect: ryansnook, Superhero Fanfare: Luis Humanoide, \nTime Travel Sounds: kasa90"
 --- !u!222 &1462029454
@@ -12015,7 +12015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1922960769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12067,7 +12067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1939390131
 RectTransform:
   m_ObjectHideFlags: 0
