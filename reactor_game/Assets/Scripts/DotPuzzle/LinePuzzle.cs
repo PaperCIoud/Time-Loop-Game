@@ -63,7 +63,12 @@ public class LinePuzzle : MonoBehaviour
 
     public void addline(int id1, int id2)
     {
-        userAnswer.Add(Mathf.Min(id1, id2) + "-" + Mathf.Max(id1, id2));
+        string line = Mathf.Min(id1, id2) + "-" + Mathf.Max(id1, id2);
+        if(!userAnswer.Contains(line))
+        {
+            userAnswer.Add(Mathf.Min(id1, id2) + "-" + Mathf.Max(id1, id2));
+        }
+        
     }
 
     public bool isSolved()
